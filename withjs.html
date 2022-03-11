@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div id="load">
+            Welcome to jquery ajax
+            <button onclick="myFun()">click</button>
+        </div>
+    </div>
+    
+    <script src="js/jqajax.js"></script>
+    <script>
+        function myFun(){
+            var req = new XMLHttpRequest();
+            req.open('GET','load.html',true);
+            req.send();
+            console.log(req)
+            
+
+            req.onreadystatechange = function (){
+            // alert('hellp')
+
+                if(req.readyState == 4 && req.status == 200){
+                    document.getElementById('load').innerHTML = req.responseText;
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>
