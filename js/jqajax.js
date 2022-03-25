@@ -3,7 +3,7 @@ $(document).ready(()=>{
     alert('file ready');
     $('#click').click(()=>{
         $('#load').load('load.html',()=>{
-            alert("your file loaded sucessfully")
+            // alert("your file loaded sucessfully")
         });
     })
 
